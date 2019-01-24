@@ -4,8 +4,14 @@
   "description": "Tiny NodeJS Static Web server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "fix": "eslint --fix ."
   },
+  "pre-commit": [
+    "fix",
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiaoyanping/anydoor.git"
@@ -17,12 +23,16 @@
   },
   "homepage": "https://github.com/qiaoyanping/anydoor#readme",
   "dependencies": {
-    "echarts": "^4.2.0-rc.2"
+    "chalk": "^2.4.2",
+    "echarts": "^4.2.0-rc.2",
+    "handlebar": "^1.0.0",
+    "supervisor": "^0.12.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "pre-commit": "^1.2.2"
   }
 }
